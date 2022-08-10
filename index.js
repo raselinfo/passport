@@ -7,6 +7,7 @@ const app = express();
 app.use(express.json({ limit: 120000 }));
 app.use(express.urlencoded({ extended: true }));
 
+
 // Todo: Cors Middleware
 app.use(cors());
 // Todo: Session Middleware
