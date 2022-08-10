@@ -3,4 +3,4 @@
 
 ### React Google Login Follow this article
 
-<a href="https://blog.logrocket.com/guide-adding-google-login-react-app/">Google Login</a>
+<a href="https://blog.logrocket.com/guide-adding-google-login-react-app/">React Google Login</a>
