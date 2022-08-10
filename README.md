@@ -1,8 +1,23 @@
 - Create a project
 - Create a OAuth consent screen
-- Create Credentials 
+- Create Credentials
   - OAuth Client Id
-- Go to https://developers.google.com/oauthplayground
-  - Authorize the api https://mail.google.com
-  - Click setting icon and use your own client id and secret id
-- Create Access and Refresh Tokens
+  - OAuth Client Secret Id
+
+<img src="./image/google.png">
+
+follow this repo : <a href="https://github.com/safak/youtube/blob/react-social-login/client/src/App.jsx">Click </a>
+
+
+In frontend you can call the router like this way /auth/login/success
+```js
+const getUser = async() => {
+      const data = await axios.get("http://localhost:4000/auth/login/success", {
+        withCredentials: true,
+      });
+      console.log(data)
+      
+    };
+    getUser();
+  }, []);
+```
