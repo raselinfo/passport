@@ -9,7 +9,13 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // Todo: Cors Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  })
+);
 // Todo: Session Middleware
 app.set("trust proxy", 1);
 app.use(
