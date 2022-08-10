@@ -1,7 +1,7 @@
 const express = require("express");
-const cookieSession = require("cookie-session");
 const passport = require("passport");
-const passportSetup = require("./passport");
+const session = require("express-session");
+require("./passport");
 const cors = require("cors");
 const app = express();
 app.use(express.json({ limit: 120000 }));
@@ -9,12 +9,14 @@ app.use(express.urlencoded({ extended: true }));
 
 // Todo: Cors Middleware
 app.use(cors());
-// Todo:Cookie Middleware
+// Todo: Session Middleware
+app.set("trust proxy", 1);
 app.use(
-  cookieSession({
-    name: "session",
-    keys: ["Secret-Key"],
-    maxAge: 24 * 60 * 60 * 1000,
+  session({
+    secret: "Cookie_Secret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 },
   })
 );
 // Todo: Passport Middleware
